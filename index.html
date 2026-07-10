@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SD Negeri 8 Banjar Anyar</title>
-    <!-- Path gambar diubah ke folder lokal -->
-    <link class="rounded" rel="icon" href="images/logo_sekolah.png" type="image/png">
+    <!-- Favicon disesuaikan untuk GitHub -->
+    <link class="rounded" rel="icon" href="halaman_utama/images/logo_sekolah.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background: linear-gradient(135deg, #d4edda 0%, #f8f9fa 100%); background-attachment: fixed; font-family: 'Segoe UI', sans-serif; }
         .navbar { background: rgba(25, 135, 84, 0.95) !important; backdrop-filter: blur(10px); }
-        .landing-hero { width: 100%; height: 75vh; object-fit: cover; border-bottom: 5px solid #198754; }
+        
+        /* BANNER WEBP UTAMA */
+        .landing-hero {
+            width: 100%;
+            height: 75vh; 
+            object-fit: cover;
+            border-bottom: 5px solid #198754;
+        }
+
         .sidebar-box, .main-content { background: rgba(255, 255, 255, 0.7) !important; backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 25px; margin-bottom: 20px; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1); }
         .stat-card { text-align: center; padding: 15px; border-radius: 15px; background: #198754; color: white; margin-bottom: 20px; }
         footer { background: rgba(25, 135, 84, 0.9); color: white; padding: 30px 0; margin-top: 40px; backdrop-filter: blur(10px); }
+        
+        /* BANNER SELAYANG PANDANG PNG */
         .banner-selayang { width: 100%; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        
         .kepsek-img { width: 250px; height: 250px; object-fit: cover; border-radius: 20px; border: 5px solid rgba(255, 255, 255, 0.8); }
         .btn-glass { background: #198754; color: white; border: none; padding: 10px 25px; border-radius: 50px; font-weight: bold; }
         .btn-dapodik { background: #ffc107; color: #000; border-radius: 20px; font-weight: bold; padding: 8px 20px; text-decoration: none; transition: 0.3s; }
+        .btn-dapodik:hover { background: #e0a800; color: #000; }
+        .carousel-control-prev-icon, .carousel-control-next-icon { filter: invert(1); }
+        
+        /* Video Custom */
         .video-player-custom { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
     </style>
 </head>
@@ -27,44 +42,168 @@
     <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
-                <img src="images/logo_sekolah.png" style="width:40px; margin-right:10px;">
+                <img src="halaman_utama/images/logo_sekolah.png" style="width:40px; margin-right:10px;" onerror="this.src='https://via.placeholder.com/40';">
                 SD NEGERI 8 BANJAR ANYAR
             </a>
-            <a href="https://sekolah.data.kemendikdasmen.go.id/profil-sekolah/60BABF14-31F5-E011-A498-A53FFFE1F824" target="_blank" class="btn-dapodik shadow-sm">🔍 Cek Profil Dapodik</a>
+            <a href="https://sekolah.data.kemendikdasmen.go.id/profil-sekolah/60BABF14-31F5-E011-A498-A53FFFE1F824" target="_blank" class="btn-dapodik shadow-sm">
+                🔍 Cek Profil Dapodik
+            </a>
         </div>
     </nav>
 
-    <!-- Banner Utama -->
+    <!-- 1. BANNER WEBP UTAMA -->
     <div class="container-fluid px-0">
-        <img src="images/banner_sekolah.webp" class="landing-hero">
+        <img src="halaman_utama/images/banner_sekolah.webp" class="landing-hero" onerror="this.src='https://via.placeholder.com/1920x800?text=Banner+WebP+Pertama+Buka';">
     </div>
 
+    <!-- AREA KONTEN UTAMA -->
     <div class="container my-4">
+        
+        <!-- 2. BANNER SELAYANG PANDANG PNG -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <img src="halaman_utama/images/banner_sekolah.png" class="banner-selayang" onerror="this.src='https://via.placeholder.com/1200x400?text=Banner+Selayang+Pandang+PNG';">
+            </div>
+        </div>
+
+        <!-- Susunan Kolom -->
         <div class="row">
+            <!-- Kolom Kiri -->
             <div class="col-lg-8">
-                <div class="main-content">
-                    <img src="images/kepala_sekolah.webp" class="kepsek-img mb-3">
-                    <h4>Sambutan Kepala Sekolah</h4>
-                    <p>"Selamat datang di SD Negeri 8 Banjar Anyar..."</p>
-                </div>
                 
-                <!-- Video Lingkungan -->
+                <!-- 3. SAMBUTAN KEPALA SEKOLAH -->
                 <div class="main-content">
-                    <video class="video-player-custom" autoplay loop muted playsinline controls>
-                        <source src="video/video_lingkungan.webm" type="video/webm">
-                    </video>
+                    <div class="d-flex flex-column flex-md-row align-items-start">
+                        <img src="halaman_utama/images/kepala_sekolah.webp" class="kepsek-img me-md-4 mb-3" onerror="this.src='https://via.placeholder.com/250';">
+                        <div>
+                            <h4 class="fw-bold text-success">Sambutan Kepala Sekolah</h4>
+                            <h5 class="text-dark mb-2">Made Arcita, S.Pd., M.Pd.</h5>
+                            <p style="text-align: justify; line-height: 1.6;">"Selamat datang di SD Negeri 8 Banjar Anyar. Kami berdedikasi membangun generasi cerdas dan berkarakter melalui 7 Kebiasaan Anak Indonesia Hebat."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visi & Misi Sekolah -->
+                <div class="main-content">
+                    <h4 class="fw-bold text-success mb-3">🎯 Visi & Misi Sekolah</h4>
+                    
+                    <div class="mb-4">
+                        <h5 class="fw-bold text-dark">Visi</h5>
+                        <p class="text-muted">"Terwujudnya peserta didik yang berakhlak mulia, cerdas, terampil, dan berwawasan lingkungan."</p>
+                    </div>
+
+                    <div>
+                        <h5 class="fw-bold text-dark">Misi</h5>
+                        <ul class="text-muted ps-3">
+                            <li>Membentuk karakter peserta didik yang religius and berbudi pekerti luhur.</li>
+                            <li>Melaksanakan pembelajaran yang aktif, kreatif, dan inovatif.</li>
+                            <li>Mengembangkan potensi bakat dan minat siswa di bidang akademik maupun non-academic.</li>
+                            <li>Menciptakan lingkungan sekolah yang bersih, sehat, dan nyaman untuk belajar.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Video Lingkungan Sekolah (OTOMATIS / AUTOPLAY) -->
+                <div class="main-content">
+                    <h4 class="fw-bold mb-3">🏫 Lingkungan Sekolah Kami</h4>
+                    <p class="text-muted mb-3">Melihat lebih dekat suasana belajar dan fasilitas yang ada di sekolah kami.</p>
+                    <div class="ratio ratio-16x9" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <video class="video-player-custom" autoplay loop muted playsinline controls preload="metadata">
+                            <source src="halaman_utama/video/video_lingkungan.webm" type="video/webm">
+                            Browser tidak mendukung pemutar video HTML5.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Facebook (Embed Dipertahankan Sesuai Kode Anda) -->
+                <div class="main-content">
+                    <h4 class="fw-bold mb-3">📢 Kabar Terkini (Facebook)</h4>
+                    <div id="fb-container" style="text-align: center; padding: 40px; background: rgba(255,255,255,0.3); border-radius: 15px;">
+                        <button class="btn btn-glass" onclick="loadFacebook()">Muat Berita Facebook</button>
+                    </div>
+                    <div id="fb-widget-area"></div>
                 </div>
             </div>
-            
+
+            <!-- Sidebar Kanan -->
             <div class="col-lg-4">
+                <!-- Statistik -->
                 <div class="row">
                     <div class="col-6"><div class="stat-card"><h3>416</h3>Siswa</div></div>
-                    <div class="col-6"><div class="stat-card"><h3>22</h3>Guru</div></div>
+                    <div class="col-6"><div class="stat-card"><h3>22</h3>Guru & STAF</div></div>
+                </div>
+
+                <!-- Kalender (Embed Dipertahankan Sesuai Kode Anda) -->
+                <div class="sidebar-box">
+                    <h5 class="fw-bold mb-3">📅 Kalender Sekolah</h5>
+                    <iframe src="https://calendar.google.com/calendar/embed?src=sdnegeri8banjaranyar%40gmail.com&mode=MONTH" style="width: 100%; height: 250px; border:none; border-radius: 15px;" loading="lazy"></iframe>
+                </div>
+
+                <!-- YouTube di Sidebar (Embed Dipertahankan Sesuai Kode Anda) -->
+                <div class="sidebar-box">
+                    <h5 class="fw-bold mb-3">📺 YouTube Sekolah</h5>
+                    <div class="ratio ratio-16x9 mb-3">
+                        <iframe src="https://www.youtube.com/embed/zNj2M9U4050?si=6qw41xmoukrDcbGD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://youtube.com/@sdnegeri8banjaranyar?si=wJkyv8DXLSskS-4s" class="btn btn-outline-danger w-100" target="_blank">Kunjungi Channel YouTube</a>
+                </div>
+
+                <!-- Media Sosial -->
+                <div class="sidebar-box">
+                    <h5 class="fw-bold mb-3">📸 Media Sosial</h5>
+                    <a href="https://www.instagram.com/sdn8banjaranyar/" class="btn btn-outline-success w-100 mb-2" target="_blank">Instagram Sekolah</a>
+                </div>
+
+                <!-- Staf Guru -->
+                <div class="sidebar-box">
+                    <h5 class="fw-bold mb-3">👨‍🏫 Staff Guru</h5>
+                    <div id="carouselGuru" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card border-0 bg-transparent text-center">
+                                    <img src="https://via.placeholder.com/400x300?text=Foto+Ardy" class="card-img-top rounded mx-auto" style="max-height: 250px; object-fit: cover;">
+                                    <div class="card-body px-0">
+                                        <h6 class="card-title fw-bold">Ardy, S.Pd.</h6>
+                                        <p class="card-text small text-muted">Mengajar: Guru PJOK</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-0 bg-transparent text-center">
+                                    <img src="https://via.placeholder.com/400x300?text=Foto+Guru+Lain" class="card-img-top rounded mx-auto" style="max-height: 250px; object-fit: cover;">
+                                    <div class="card-body px-0">
+                                        <h6 class="card-title fw-bold">Nama Guru, S.Pd.</h6>
+                                        <p class="card-text small text-muted">Mengajar: Guru Kelas 1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGuru" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGuru" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <h5 class="fw-bold">SD NEGERI 8 BANJAR ANYAR</h5>
+            <p>Jl. Tukad Yeh Ho, BTN Sanggulan, Kec. Kediri, Kab. Tabanan, Bali 82123</p>
+        </div>
+    </footer>
+
+    <script>
+        function loadFacebook() {
+            document.getElementById('fb-container').style.display = 'none';
+            document.getElementById('fb-widget-area').innerHTML = `<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsddelapan.banjar.anyar&tabs=timeline&width=500&height=500&small_header=true&hide_cover=true" width="100%" height="500" style="border:none;" frameborder="0" allowfullscreen="true"></iframe>`;
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
