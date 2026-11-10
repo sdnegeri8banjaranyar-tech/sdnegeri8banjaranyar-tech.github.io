@@ -21,36 +21,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SD Negeri 8 Banjar Anyar</title>
+    
     <!-- Favicon disesuaikan untuk GitHub -->
     <link class="rounded" rel="icon" href="logo_sekolah.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome & Google Fonts untuk ikon dan tipografi premium -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        body { background: linear-gradient(135deg, #d4edda 0%, #f8f9fa 100%); background-attachment: fixed; font-family: 'Segoe UI', sans-serif; }
-        .navbar { background: rgba(25, 135, 84, 0.95) !important; backdrop-filter: blur(10px); }
-        
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 8px 32px 0 rgba(15, 76, 42, 0.12);
+            --brand-green: #146c43;
+            --brand-light-green: #d1e7dd;
+        }
+
+        body { 
+            background: linear-gradient(135deg, #a3e635 0%, #30b970 40%, #0d5c3a 100%); 
+            background-attachment: fixed; 
+            font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+            color: #1e293b;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Latar Belakang Desain Glassmorphism Dinamis (Floating Blobs) */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: -1;
+            pointer-events: none;
+        }
+        body::before {
+            width: 450px;
+            height: 450px;
+            background: rgba(255, 255, 255, 0.4);
+            top: -100px;
+            left: -100px;
+        }
+        body::after {
+            width: 500px;
+            height: 500px;
+            background: rgba(16, 185, 129, 0.5);
+            bottom: -150px;
+            right: -100px;
+        }
+
+        /* NAVBAR GLASS */
+        .navbar { 
+            background: rgba(20, 108, 67, 0.75) !important; 
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
         /* BANNER WEBP UTAMA */
         .landing-hero {
             width: 100%;
             height: 75vh; 
             object-fit: cover;
-            border-bottom: 5px solid #198754;
+            border-bottom: 5px solid #146c43;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .sidebar-box, .main-content { background: rgba(255, 255, 255, 0.7) !important; backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 25px; margin-bottom: 20px; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1); }
-        .stat-card { text-align: center; padding: 15px; border-radius: 15px; background: #198754; color: white; margin-bottom: 20px; }
-        footer { background: rgba(25, 135, 84, 0.9); color: white; padding: 30px 0; margin-top: 40px; backdrop-filter: blur(10px); }
+        /* KARTU KONTEN BERGAYA GLASSMORPHISM ULTIMATE */
+        .sidebar-box, .main-content { 
+            background: var(--glass-bg) !important; 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); 
+            border-radius: 24px; 
+            padding: 28px; 
+            margin-bottom: 24px; 
+            box-shadow: var(--glass-shadow); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sidebar-box:hover, .main-content:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px 0 rgba(15, 76, 42, 0.18);
+        }
+
+        /* STATISTIK GLASS */
+        .stat-card { 
+            text-align: center; 
+            padding: 20px 15px; 
+            border-radius: 20px; 
+            background: rgba(20, 108, 67, 0.85); 
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white; 
+            margin-bottom: 20px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.03);
+        }
+
+        /* FOOTER GLASS */
+        footer { 
+            background: rgba(15, 76, 42, 0.85); 
+            color: white; 
+            padding: 40px 0; 
+            margin-top: 50px; 
+            backdrop-filter: blur(15px); 
+            -webkit-backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
         
-        /* BANNER SELAYANG PANDANG PNG */
-        .banner-selayang { width: 100%; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        /* BANNER SELAYANG PANDANG */
+        .banner-selayang { 
+            width: 100%; 
+            border-radius: 24px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
         
-        .kepsek-img { width: 250px; height: 250px; object-fit: cover; border-radius: 20px; border: 5px solid rgba(255, 255, 255, 0.8); }
-        .btn-glass { background: #198754; color: white; border: none; padding: 10px 25px; border-radius: 50px; font-weight: bold; }
-        .btn-dapodik { background: #ffc107; color: #000; border-radius: 20px; font-weight: bold; padding: 8px 20px; text-decoration: none; transition: 0.3s; }
-        .btn-dapodik:hover { background: #e0a800; color: #000; }
+        /* FOTO KEPALA SEKOLAH & ELEMEN VISUAL */
+        .kepsek-img { 
+            width: 250px; 
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 22px; 
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        /* TOMBOL BERGAYA GLASS & NEOMORPHIC ACCENT */
+        .btn-glass { 
+            background: linear-gradient(135deg, rgba(20, 108, 67, 0.9), rgba(15, 76, 42, 0.95)); 
+            color: white; 
+            border: 1px solid rgba(255, 255, 255, 0.4); 
+            padding: 12px 28px; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(20, 108, 67, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-glass:hover {
+            background: linear-gradient(135deg, rgba(25, 135, 84, 1), rgba(20, 108, 67, 1));
+            color: white;
+            box-shadow: 0 10px 25px rgba(20, 108, 67, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-dapodik { 
+            background: rgba(255, 193, 7, 0.9); 
+            color: #000; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            padding: 10px 22px; 
+            text-decoration: none; 
+            transition: all 0.3s ease; 
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+
+        .btn-dapodik:hover { 
+            background: #ffc107; 
+            color: #000; 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.5);
+        }
+
         .carousel-control-prev-icon, .carousel-control-next-icon { filter: invert(1); }
         
-        /* Video Custom */
+        /* Video Custom Container */
         .video-player-custom { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
+        
+        /* Frame & Iframe Styling untuk efek Glass Rapi */
+        iframe, .ratio-16x9 {
+            border-radius: 16px !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .list-misi li {
+            position: relative;
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -85,6 +243,7 @@
 
         <!-- Susunan Kolom -->
         <div class="row">
+            
             <!-- Kolom Kiri -->
             <div class="col-lg-8">
                 
@@ -111,7 +270,7 @@
 
                     <div>
                         <h5 class="fw-bold text-dark">Misi</h5>
-                        <ul class="text-muted ps-3">
+                        <ul class="text-muted ps-3 list-misi">
                             <li>Membentuk karakter peserta didik yang religius and berbudi pekerti luhur.</li>
                             <li>Melaksanakan pembelajaran yang aktif, kreatif, dan inovatif.</li>
                             <li>Mengembangkan potensi bakat dan minat siswa di bidang akademik maupun non-academic.</li>
@@ -132,17 +291,42 @@
                     </div>
                 </div>
 
-                <!-- Facebook (Embed Dipertahankan Sesuai Kode Anda) -->
+                <!-- Facebook (Kembali ke Posisi Asli + Preview Gambar Pasti Tampil & Iframe) -->
                 <div class="main-content">
                     <h4 class="fw-bold mb-3">📢 Kabar Terkini (Facebook)</h4>
-                    <div id="fb-container" style="text-align: center; padding: 40px; background: rgba(255,255,255,0.3); border-radius: 15px;">
-                        <button class="btn btn-glass" onclick="loadFacebook()">Muat Berita Facebook</button>
-                    </div>
-                    <div id="fb-widget-area"></div>
-                </div>
-            </div>
+                    
+                    <!-- Preview Foto & Kartu Facebook Interaktif (Tidak akan kosong/blank) -->
+                    <div class="p-3 mb-3 rounded-4" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.8);">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="logo_sekolah.png" class="rounded-circle me-2" style="width: 42px; height: 42px; object-fit: cover;" onerror="this.src='https://placehold.co/100x100/198754/ffffff?text=SD8';">
+                            <div>
+                                <h6 class="fw-bold m-0 text-dark">SD Negeri 8 Banjar Anyar</h6>
+                                <small class="text-muted"><i class="fab fa-facebook text-primary me-1"></i>Halaman Facebook Resmi</small>
+                            </div>
+                        </div>
 
-           <!-- Sidebar Kanan -->
+                        <!-- Foto Preview Kegiatan yang Dipastikan Tampil Visualnya -->
+                        <div class="mb-3 rounded-3 overflow-hidden shadow-sm" style="max-height: 280px;">
+                            <img src="previewsd8.png" class="w-100 h-100 object-fit-cover" alt="Preview Facebook SD Negeri 8 Banjar Anyar" onerror="this.src='https://placehold.co/800x400/198754/ffffff?text=Dokumentasi+Facebook+SDN+8+Banjar+Anyar';">
+                        </div>
+
+                        <div id="fb-container" class="text-center p-3" style="background: rgba(255,255,255,0.4); border-radius: 15px;">
+                            <p class="small text-muted mb-2">Klik tombol di bawah jika ingin memuat timeline aktif Facebook secara langsung:</p>
+                            <button class="btn btn-glass btn-sm mb-2" onclick="loadFacebook()"><i class="fab fa-facebook me-1"></i> Tampilkan Widget Facebook</button>
+                            <div>
+                                <a href="https://www.facebook.com/sddelapan.banjar.anyar" target="_blank" class="btn btn-outline-success btn-sm rounded-pill fw-bold">
+                                    Buka Langsung di Facebook <i class="fas fa-external-link-alt ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="fb-widget-area" class="mt-2"></div>
+                    </div>
+                </div>
+
+            </div> <!-- PENUTUP KOLOM KIRI (col-lg-8) -->
+
+           <!-- Sidebar Kanan (Posisi Asli Dikembalikan Sempurna) -->
             <div class="col-lg-4">
                 <!-- Statistik -->
                 <div class="row">
@@ -180,8 +364,7 @@
                             <!-- GURU 1 (Aktif) -->
                             <div class="carousel-item active">
                                 <div class="card border-0 bg-transparent text-center">
-                                    <!-- Ganti link di src dengan link foto asli dari Google Photos -->
-                                    <img src="https://via.placeholder.com/400x300?text=Foto+Ardy" class="card-img-top rounded mx-auto" style="max-height: 250px; object-fit: cover;">
+                                    <img src="https://placehold.co/400x300/198754/ffffff?text=Foto+Ardy" class="card-img-top rounded mx-auto" style="max-height: 250px; object-fit: cover;">
                                     <div class="card-body px-0">
                                         <h6 class="card-title fw-bold">Ardy, S.Pd.</h6>
                                         <p class="card-text small text-muted">Mengajar: Guru PJOK</p>
@@ -192,8 +375,7 @@
                             <!-- GURU 2 -->
                             <div class="carousel-item">
                                 <div class="card border-0 bg-transparent text-center">
-                                    <!-- Ganti link di src dengan link foto asli guru kedua -->
-                                    <img src="https://via.placeholder.com/400x300?text=Foto+Guru+2" class="card-img-top rounded mx-auto" style="max-height: 250px; object-fit: cover;">
+                                    <img src="https://placehold.co/400x300/198754/ffffff?text=Foto+Guru+2" class="card-img-top rounded mx-auto" style="max-height: 250px; object-fit: cover;">
                                     <div class="card-body px-0">
                                         <h6 class="card-title fw-bold">Nama Guru Kedua, S.Pd.</h6>
                                         <p class="card-text small text-muted">Mengajar: Guru Kelas 1</p>
@@ -204,8 +386,7 @@
                             <!-- GURU 3 -->
                             <div class="carousel-item">
                                 <div class="card border-0 bg-transparent text-center">
-                                    <!-- Ganti link di src dengan link foto asli guru ketiga -->
-                                    <img src="https://via.placeholder.com/400x300?text=Foto+Guru+3" class="card-img-top rounded mx-auto" style="max-height: 250px; object-fit: cover;">
+                                    <img src="https://placehold.co/400x300/198754/ffffff?text=Foto+Guru+3" class="card-img-top rounded mx-auto" style="max-height: 250px; object-fit: cover;">
                                     <div class="card-body px-0">
                                         <h6 class="card-title fw-bold">Nama Guru Ketiga, S.Pd.H</h6>
                                         <p class="card-text small text-muted">Mengajar: Guru Agama Hindu</p>
@@ -215,7 +396,6 @@
 
                         </div>
                         
-                        <!-- Tombol Navigasi Kiri & Kanan -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselGuru" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         </button>
@@ -225,64 +405,24 @@
                     </div>
                 </div>
 
-                <!-- ========================================== -->
-                <!--          GALERI FOTO / KEGIATAN            -->
-                <!-- ========================================== -->
+                <!-- Galeri Kegiatan -->
                 <div id="galeri" class="sidebar-box mt-4">
                     <h5 class="fw-bold text-success mb-3"><i class="fas fa-images me-2"></i>Galeri Kegiatan</h5>
                     <p class="text-muted small mb-3">Dokumentasi momen penting di sekolah</p>
                     
-                    <!-- Wadah Album Otomatis (Mengunci Ukuran Sidebar) -->
                     <div style="width:100%; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                        
-                        <!-- SCRIPT UTAMA PUBLICALBUM -->
                         <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
                         
-                        <!-- WIDGET PLAYER ALBUM (Tinggi disesuaikan 300px agar pas di sidebar) -->
                         <div class="pa-gallery-player-widget" style="width:100%; height:300px; display:none;"
                           data-link="https://photos.app.goo.gl/XZAPTRdfwTdtt4Pw7"
                           data-title="34 new photos · Saturday, Jun 13 📸"
                           data-description="Tap to view!">
                           <object data="https://lh3.googleusercontent.com/pw/AP1GczOcJ06WwnTgEiIQ-MZXTI5_FQgi74ttWQtCFxfQA2cGLj7r93KTXM1cgQ81l6AAlPZ_L3povw4IWOheaDz7y5jUXwxSHpaqDQYkMV0Qqa86T688juU=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczNxvFabVOJK0vx29X31PgC416hFSUevROigpxGnNWGRjT4Ouy7Rejhfrpsn5Qht3lezBAU7wJ5MoUBm95BII9FJLimhA65nYt2J8R5mM3HEjtDaRXU=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczMS4vkUAxMpTFBMK7r69kwUuXBCmzTFGniOCd3B_gPAteeX3aXscVPwAmSB8EFHYPtyx67YmeB9Zi1RuVots29dW1kFshdHI2J6G-BewIjXxEoj0GU=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczOJlb_503Q4bCQS3lzHPDVUTKr8QdO7ofeNd6C4Y8TR7hRiX_W7Xj7E0cER_Pmz6PCzaoZhPtilkL_Jzx9V2Fkb_7CmPvGKxQ2Sf9dwKFMBInn1rG4=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczP8LvAoJGRdO3YCf_2tYIEoFjVgRgafmfffNKJKqCyb-20uDARoiKS7FVPAZOcGZYhAMJuYd1IMvqhtfbbgPWOOmyzeH7PVT5gFQSe4j_pBWJlP0KI=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczOKst8FKgduOdz7E210yVe3VXsr5S1FfY9-v0mZevpAtj6TgzIQA3KTvlZkrxy1Pmzqg-PUYaa5q8gj0BoRQRtBJzXCUSiGCcDKAQu8H2aY8x4yuis=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczMW-RaCSgDa6DjwjDGqCW8COlV3UTpZ7TQn-m2z5Sk6aeL3nZIoAP191Zn50t9GFftpLNPZQ3XzK6lDWeRQ6jsM-YDsPY6CEpGH-aePHAy4RHwVGCw=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczPzvE5Sk8aPI1yYBT9umKtPyL4JHOkx_N0hd3bQl8y37ZjMTn1juFKF6EZwyd06e4xPY8S9M8Uaa_NdpEeBykqpJ2jP7Pefpj2gyHg0FjVxRY_P-8k=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczPKX4cyMdq4cod914IvDAkex0y5m62u-zylkrYhs8Tg-3_WFEN_hDtyUIkKGATDpubzoO15GLnxJmE_nB9_BNR5ACptZ3z5Sosl9FUp0tTgRR2rvmg=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczMfmQLvwgcxNK71yWYIM4RmlfwoXBz39G3BM9lFq7apbxpy14CNJc9N43bOcnIMnL3Za-_B554Q4b7sXwUL3brHkT_4wdioEbPe71KbVFrI9UbE6es=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczN90cM0gWvxjfplKf9OT6L0VB0fJ0MIMCFKrbct1zbvwpjfKo5qW2bc5RDfhfjtebsLndJaqQrvyXKfVe5RSZBzVORTWMnwUpyYZ0CHZpEWX_gOSIA=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczOX4HkqkvwUDRViBCdMzvtFR7Ye7J-lBNnRcZCynwiLDoPAlywlTod9gv_JHSALM3fcUmZ4R245JRgJfvAIwRddp9eRAg1s66k1F_gROsTQFAxqiEU=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczNeys7M7o5rbvHv3npuEjdi29Kg3oK_22Vl30XpKoWhz0T68Scmq8yd43Zj-ZOLYzeK4P4N4fLUnqGntZZL1RTNs1ztVGpsyI06C67DywqHstxi3w4=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczNMvC0B0EG7ycD5hAoIrj-xliR-tGMoVwd1qG1zr8S4xvOuaxZpb3zUeN_DLh6ZqmHok30gJVf-m9uqpLCD93jxMq_bDiH932gL08-SMx5YMxfkd8A=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczOP9LsdmBS6hRAcHImHQoS8BgI1gt-e7-2rD1yMYsMQuMIEA5VyENuS9YBCC2Z_wrRCi4iSbSNRjz5sbIyHisQWUZ3FHBhDYxIqw14_qQobWqcSLpg=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczN491jcjjgZ1gTOhaBbc7rDHjh2MLD7NG5rOBFV2lwEkt1KuZ0B6vL57UppYw40OxsuxaKgTBiyRNcSgz3YhLlkS-e5EfQ5VJijp89nDHAgWJ3-A3I=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczPwmV9Eer2xDzEBehqkqRi0h5ulXLDxBvRxEyEyqSCvXfSEoBCMlQkNgaAZRY7rGpq_mfCGr66JtR2slMEsmVWcQK_2560vLFlOBC57YntiEk80scw=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczNeUL_hmU5Med1AIq7-BWhy1cQslkH34R4ILVLplQL7kq8PNgehLDzTN_lTMFVRxu1zJApbaj7DyYL0XvdKUsxI3JKad6rl6qEArFnIlkxMkhDY-II=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczMji5v9G6vnuiaqYwXCroA4Lr3Yc6FJvCN2McSLw2US_hQfsp27KhWtL7bQxC_NqC2S3aotPzIRFibNEybYYZWWH8p1MIaulQB3_dAsvwvjh_hpBDI=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczN1QJ8tKJIPvbW5c14N21YvtkxTMpscdqJTxtsqE0yjwIZwXzE3wiJ8yd9BIe3o3acBZP-LpIFw2NCqYWu4GD2naczR_hoGFnqj3cnVDknSujF75LQ=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczN6sZa_PQa6J2Xe-RNRzqs4NxQRwI3K3Ji77aM34ZRiZOZn3fXzfSNnZTsWk54EL4gCi-jlDC-IB1JfCNGQhFTbZCXjlo9r6a29wp3Boyl4va1Liso=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczMyBAqw0auJiyDgxAwbtJV-djusMPR6AuqIM5G1JIq51TT019yivsu7clCGfHzQtk-1Wsn-0MZAy1NYrhCwqOulx_XL0dKQ1H06aj7yzMfFxva2mbY=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczMEzKNvZHTrgX1fi0Yd6R-_zzBFTmumK2Q4Pf6chq9mK4owJmjQ4GlwBZ50q6mpSfiXVuPj7Rd9KWogYVYXefJqOLK9YxUqpAXfPS0YQCL5yWqoMFQ=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczNiZCxq1GZ-ER8rdIvHdWdVad0hLLfRaOZHxtMA3MbbYuLIyLl25h-tFEWWaqbVvp9HoEJHo1iblN4UaX98rL1KkjalopW711TrxOOg8Gu_Ezk_6eI=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczN8MaAKw0gpj-gA1tjvIJAwaSl5KuP_khhlXI1mNxwmJgAKj0DUZzJMNpjsDhhowtcnE-jUtdrCUyKUTfCg8g0Ric9qP02KLZsUqi80eO4A48uSUR0=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczPXmCR-jMYjJBkovTrlcNvqpiV94A89ehwMM2lGH_6tYZDQCAR7ciIdxdRKD_Wxfqx-FX8Hx5i9U5oyTDukFgUhZ1UjcD3ho-HvvWsl2ffu-Xjwxwc=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczNBneBRSYFb2zuStNvUia-qW_oZGm5axyx-053FcsJg82bon-syPhO54VSZWbfkm1Uz6qXmGq5wKFxZihGt9TGI_r5gTKn8gjtlT9lMBijFcsEoRRg=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczMaO15oSmB8PDtzjiokZVM8bXgETlHozhRmMiqrXAHfzabDkYKuslRP4BiiC46rB74usaCM8SCBZHKPYONPKIF_S76c3yfkNZuvaJ4x81OoaCxseck=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczNtbtNdDZFAtAFot-HXA8bEhCiTTFCJmBXHnisVIoW2d_OTFmCmMk1sRczKqV5r53KXdvBH2wnEjz4k0wUL8knbWyG90K7ORbuX60067yNg-7Q2oEo=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczON9GmNJiSe46_5VHxDKL5y2hYKgw-IiLIcyE8OMjxgjceBDlvxGdXbkrm5zbvraUa5ZWX3wvtCF9WP8AJLwLXONHXR-cBcWvk5ebLpxC7CH9kfXbM=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczPkxOagrxKzDvE3Ra0MIJIJY_LWJ4UPujl-zZRvLV4pRBcRbKd1pphyyEJJlmwz3QCg_993wHJplfW02q77aKU7ia9yNBKYhRMlA1QRt-T7ztf9aWg=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczOBOiUEqiriVg-sAZnwfjW2DPv50DLRqZFUoYsphGPjWYBdS1nCEBf_JjS3WA8LOK7Pe1q6xbaWKpOiUaSAnOvTJTuU8-7R3JtkCzT2nG1gmD4A_SE=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczMqKLUclxtliSbysNM7nNNi2-prwgg8sj4obIBJ37g7v63XZ97-1USQ5OLjLztHhAL-M8RKKVGClZqq4QXDV3yxD3LLdAJcQVmv44DI0droDqCU6-U=w1920-h1080"></object>
-                          <object data="https://lh3.googleusercontent.com/pw/AP1GczO11Eb-d4ryq_gZzpTwvqdLn8WV74jXgHH7E74RTo8KCIFc69k1xarmkp8wki_y4qm43Bwj-cprnuRlJEIc9w6xr6enHOqqSs7JmvDLRrGcmfu9rWw=w1920-h1080"></object>
                         </div>
-                        
                     </div>
                 </div>
 
-                <!-- Lokasi Sekolah (Kunci di dalam Sidebar) -->
+                <!-- Lokasi Sekolah -->
                 <div class="sidebar-box mt-4">
                     <h5 class="fw-bold mb-3"><i class="fas fa-map-marker-alt text-success me-2"></i>Lokasi Sekolah</h5>
                     <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
@@ -299,10 +439,10 @@
                 </div>
 
             </div> <!-- PENUTUP ASLI SIDEBAR KANAN (col-lg-4) -->     
-          
-    <!-- ========================================== -->
-    <!--                   FOOTER                   -->
-    <!-- ========================================== --> 
+        </div> <!-- PENUTUP BARIS UTAMA -->
+    </div> <!-- PENUTUP CONTAINER UTAMA -->
+
+    <!-- FOOTER --> 
     <footer>
         <div class="container text-center">
             <h5 class="fw-bold">SD NEGERI 8 BANJAR ANYAR</h5>
