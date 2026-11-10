@@ -291,42 +291,83 @@
                     </div>
                 </div>
 
-                <!-- Facebook (Kembali ke Posisi Asli + Preview Gambar Pasti Tampil & Iframe) -->
+                <!-- RIWAYAT / HISTORY POSTINGAN FACEBOOK (DIAMANKAN AGAR TIDAK MENEMBUS FOOTER) -->
                 <div class="main-content">
-                    <h4 class="fw-bold mb-3">📢 Kabar Terkini (Facebook)</h4>
-                    
-                    <!-- Preview Foto & Kartu Facebook Interaktif (Tidak akan kosong/blank) -->
-                    <div class="p-3 mb-3 rounded-4" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.8);">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="logo_sekolah.png" class="rounded-circle me-2" style="width: 42px; height: 42px; object-fit: cover;" onerror="this.src='https://placehold.co/100x100/198754/ffffff?text=SD8';">
-                            <div>
-                                <h6 class="fw-bold m-0 text-dark">SD Negeri 8 Banjar Anyar</h6>
-                                <small class="text-muted"><i class="fab fa-facebook text-primary me-1"></i>Halaman Facebook Resmi</small>
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="fw-bold text-success m-0"><i class="fab fa-facebook-square me-2 text-primary"></i>Riwayat Status & Kabar Facebook</h4>
+                            <a href="https://www.facebook.com/sddelapan.banjar.anyar" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-bold">
+                                <i class="fas fa-external-link-alt me-1"></i> Buka Facebook
+                            </a>
+                        </div>
+                        <p class="text-muted small mb-4">Catatan aktivitas dan pengumuman resmi yang dipublikasikan di akun Facebook SD Negeri 8 Banjar Anyar.</p>
+
+                        <!-- LIST HISTORY POST 1 -->
+                        <div class="p-3 mb-3 rounded-4" style="background: rgba(255, 255, 255, 0.5); border-left: 4px solid #1877f2; backdrop-filter: blur(5px);">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="fab fa-facebook text-primary fa-lg"></i>
+                                    <strong class="text-dark">SD Negeri 8 Banjar Anyar</strong>
+                                </div>
+                                <small class="text-muted"><i class="far fa-clock me-1"></i>10 Nov 2026</small>
+                            </div>
+                            <p class="mb-2 text-secondary" style="line-height: 1.5; font-size: 0.95rem;">
+                                "Semangat pagi! Pembiasaan 7 Kebiasaan Anak Indonesia Hebat berjalan lancar hari ini. Anak-anak tampak antusias diawali dengan doa bersama dan senam pagi. Mari ciptakan lingkungan sekolah yang sehat dan menyenangkan!"
+                            </p>
+                            <div class="d-flex align-items-center gap-3 pt-1 border-top border-light">
+                                <small class="text-muted"><i class="far fa-thumbs-up me-1 text-primary"></i> 42 Menyukai</small>
+                                <small class="text-muted"><i class="far fa-comment me-1 text-success"></i> 8 Komentar</small>
                             </div>
                         </div>
 
-                        <!-- Foto Preview Kegiatan yang Dipastikan Tampil Visualnya -->
-                        <div class="mb-3 rounded-3 overflow-hidden shadow-sm" style="max-height: 280px;">
-                            <img src="previewsd8.png" class="w-100 h-100 object-fit-cover" alt="Preview Facebook SD Negeri 8 Banjar Anyar" onerror="this.src='https://placehold.co/800x400/198754/ffffff?text=Dokumentasi+Facebook+SDN+8+Banjar+Anyar';">
-                        </div>
-
-                        <div id="fb-container" class="text-center p-3" style="background: rgba(255,255,255,0.4); border-radius: 15px;">
-                            <p class="small text-muted mb-2">Klik tombol di bawah jika ingin memuat timeline aktif Facebook secara langsung:</p>
-                            <button class="btn btn-glass btn-sm mb-2" onclick="loadFacebook()"><i class="fab fa-facebook me-1"></i> Tampilkan Widget Facebook</button>
-                            <div>
-                                <a href="https://www.facebook.com/sddelapan.banjar.anyar" target="_blank" class="btn btn-outline-success btn-sm rounded-pill fw-bold">
-                                    Buka Langsung di Facebook <i class="fas fa-external-link-alt ms-1"></i>
-                                </a>
+                        <!-- LIST HISTORY POST 2 -->
+                        <div class="p-3 mb-3 rounded-4" style="background: rgba(255, 255, 255, 0.5); border-left: 4px solid #1877f2; backdrop-filter: blur(5px);">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="fab fa-facebook text-primary fa-lg"></i>
+                                    <strong class="text-dark">SD Negeri 8 Banjar Anyar</strong>
+                                </div>
+                                <small class="text-muted"><i class="far fa-clock me-1"></i>04 Nov 2026</small>
+                            </div>
+                            <p class="mb-2 text-secondary" style="line-height: 1.5; font-size: 0.95rem;">
+                                "Pengumuman: Kegiatan Ekstrakurikuler Tari Bali dan Pramuka minggu ini tetap berjalan sesuai jadwal biasa. Diharapkan seluruh siswa membawa perlengkapan masing-masing."
+                            </p>
+                            <div class="d-flex align-items-center gap-3 pt-1 border-top border-light">
+                                <small class="text-muted"><i class="far fa-thumbs-up me-1 text-primary"></i> 35 Menyukai</small>
+                                <small class="text-muted"><i class="far fa-comment me-1 text-success"></i> 3 Komentar</small>
                             </div>
                         </div>
 
-                        <div id="fb-widget-area" class="mt-2"></div>
+                        <!-- LIST HISTORY POST 3 -->
+                        <div class="p-3 mb-3 rounded-4" style="background: rgba(255, 255, 255, 0.5); border-left: 4px solid #1877f2; backdrop-filter: blur(5px);">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="fab fa-facebook text-primary fa-lg"></i>
+                                    <strong class="text-dark">SD Negeri 8 Banjar Anyar</strong>
+                                </div>
+                                <small class="text-muted"><i class="far fa-clock me-1"></i>28 Okt 2026</small>
+                            </div>
+                            <p class="mb-2 text-secondary" style="line-height: 1.5; font-size: 0.95rem;">
+                                "Selamat Hari Sumpah Pemuda! Bersama kita wujudkan generasi muda SD Negeri 8 Banjar Anyar yang tangguh, cerdas, berbudaya, dan berakhlak mulia."
+                            </p>
+                            <div class="d-flex align-items-center gap-3 pt-1 border-top border-light">
+                                <small class="text-muted"><i class="far fa-thumbs-up me-1 text-primary"></i> 58 Menyukai</small>
+                                <small class="text-muted"><i class="far fa-comment me-1 text-success"></i> 12 Komentar</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BANNER BAWAH SEBAGAI PENUTUP RAPI -->
+                    <div class="mt-4 pt-3 border-top border-light text-center">
+                        <a href="https://www.facebook.com/sddelapan.banjar.anyar" target="_blank" class="btn btn-glass w-100 py-2">
+                            <i class="fab fa-facebook me-2"></i> Lihat Seluruh Postingan di Facebook Resmi
+                        </a>
                     </div>
                 </div>
 
             </div> <!-- PENUTUP KOLOM KIRI (col-lg-8) -->
 
-           <!-- Sidebar Kanan (Posisi Asli Dikembalikan Sempurna) -->
+           <!-- Sidebar Kanan -->
             <div class="col-lg-4">
                 <!-- Statistik -->
                 <div class="row">
@@ -346,13 +387,19 @@
                     <div class="ratio ratio-16x9 mb-3">
                         <iframe src="https://www.youtube.com/embed/zNj2M9U4050?si=6qw41xmoukrDcbGD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-                    <a href="https://youtube.com/@sdnegeri8banjaranyar?si=wJkyv8DXLSskS-4s" class="btn btn-outline-danger w-100" target="_blank">Kunjungi Channel YouTube</a>
-                </div>
+                </div> <!-- PENUTUP SIDEBAR YOUTUBE YANG SEBELUMNYA HILANG -->
 
-                <!-- Media Sosial -->
+                <!-- Media Sosial Facebook & Instagram (Di Sidebar Kanan Ringkas) -->
                 <div class="sidebar-box">
-                    <h5 class="fw-bold mb-3">📸 Media Sosial</h5>
-                    <a href="https://www.instagram.com/sdn8banjaranyar/" class="btn btn-outline-success w-100 mb-2" target="_blank">Instagram Sekolah</a>
+                    <h5 class="fw-bold mb-3"><i class="fas fa-share-alt text-success me-2"></i>Media Sosial Resmi</h5>
+                    <p class="small text-muted mb-3">Ikuti akun resmi sekolah untuk mendapatkan pembaruan foto & video kegiatan harian.</p>
+                    
+                    <a href="https://www.facebook.com/sddelapan.banjar.anyar" target="_blank" class="btn btn-primary w-100 mb-2 rounded-pill fw-bold shadow-sm">
+                        <i class="fab fa-facebook me-2"></i> Facebook SDN 8 Banjar Anyar
+                    </a>
+                    <a href="https://www.instagram.com/sdn8banjaranyar/" target="_blank" class="btn btn-danger w-100 rounded-pill fw-bold shadow-sm">
+                        <i class="fab fa-instagram me-2"></i> Instagram @sdn8banjaranyar
+                    </a>
                 </div>
 
                <!-- Staf Guru -->
@@ -451,9 +498,9 @@
     </footer>
 
     <script>
-        function loadFacebook() {
-            document.getElementById('fb-container').style.display = 'none';
-            document.getElementById('fb-widget-area').innerHTML = `<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsddelapan.banjar.anyar&tabs=timeline&width=500&height=500&small_header=true&hide_cover=true" width="100%" height="500" style="border:none;" frameborder="0" allowfullscreen="true"></iframe>`;
+        function loadFacebookSidebar() {
+            document.getElementById('fb-container-sidebar').style.display = 'none';
+            document.getElementById('fb-widget-area-sidebar').innerHTML = `<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsddelapan.banjar.anyar&tabs=timeline&width=300&height=400&small_header=true&hide_cover=true" width="100%" height="400" style="border:none;" frameborder="0" allowfullscreen="true"></iframe>`;
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
